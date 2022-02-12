@@ -1,7 +1,6 @@
 package ui;
 
-
-import controller.LoginController;
+import controller.UserController;
 import java.awt.Color;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -271,10 +270,8 @@ public class LoginForm extends javax.swing.JFrame {
         }else {
             this.setUsername(txtUsername.getText());
             this.setPassword(input_password);
-            System.out.println(this.getPassword());
-            System.out.println(this.getUsername());
-            LoginController lc = new LoginController();
-            if(lc.checkLogin(this.getUsername(),this.getPassword())){
+            UserController uc = new UserController(this.getUsername(), this.getPassword());
+            if(uc.login(uc)){
                 System.out.println("Login Success");
             }
             else{

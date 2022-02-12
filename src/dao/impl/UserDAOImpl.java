@@ -15,9 +15,9 @@ public class UserDAOImpl implements UserDAO{
     }
     
     @Override
-    public boolean login(String username, String password) {
+    public boolean login(UserModel um) {
         try {
-            String sql = "SELECT username, passcode FROM tbl_user WHERE username ='" + username + "' AND passcode ='" + password + "';";
+            String sql = "SELECT username, passcode FROM tbl_user WHERE username ='" + um.getUsername() + "' AND passcode ='" + um.getPassword() + "';";
             ResultSet rs = dbConnect.selectQueryBuilder(sql);
             if(rs.next()){
                 return true;

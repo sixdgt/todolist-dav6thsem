@@ -11,7 +11,7 @@ public interface UserDAO {
      * @return boolean
      * this method is used to check user login credentials
      */
-    boolean login(String username, String password);
+    boolean login(UserModel um);
     
     /**
      * @param UserModel object
